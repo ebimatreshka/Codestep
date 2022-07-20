@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/* 文字カラー */
+/*　線の色　*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #2B2A27;
+  font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Meiryo", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #2B2A27;
+}
+
+/* mainvisual */
+/*widthだけでなく高さを100vhにすると全画面表示になる
+ブラウザの高さが1000pxなら「1vh」で1%の10pxになり、
+「100vh」で100％＝ブラウザの高さになる
+結果それではやらなかった*/
+#mainvisual img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 80px;
+}
+
+/* text */
+.text {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.text .site-title {
+  margin-bottom: 20px;
+}
+
+/* image */
+/* calc(100%/3)でwidthの値が３等分 */
+.flex {
+  display: flex;
+  margin-bottom: 70px;
+}
+.flex li {
+  width: 33.3333333333%;
+}
+.flex li img {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* buttom */
+/* display: inline-block;でaに幅と高さを持たせる */
+.btn {
+  display: block;
+  width: 150px;
+  margin: 0 auto 80px auto;
+  padding: 18px 60px;
+  border: solid 1.4px #2B2A27;
+  text-decoration: none;
+}
+
+/* footer */
+#footer {
+  font-size: 1rem;
+  padding: 20px;
+  text-align: center;
+}
+#footer .sns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#footer li {
+  padding: 10px;
+}
+
+/*　レシピページ　*/
+/*　display: flex;で画像とレシピを横並び*/
+#section {
+  display: flex;
+  margin-bottom: 60px;
+}
+#section .img {
+  width: 50%;
+}
+#section img {
+  width: 100%;
+  height: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: bottom;
+}
+
+#section .recipe {
+  width: 50%;
+  padding: 40px 5% 0 5%;
+}
+#section .recipe .recipe-title {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+
+.recipe .content-title {
+  border-bottom: solid 1px rgb(115, 109, 109);
+  font-size: 1.25rem;
+  padding-bottom: 5px;
+  margin: 40px 0;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.ingredients-list dt {
+  width: 85%;
+  border-bottom: dotted 1px rgb(115, 109, 109);
+  padding: 6px 0;
+}
+
+.ingredients-list dd {
+  width: 15%;
+  border-bottom: dotted 1px rgb(115, 109, 109);
+  padding: 6px 0;
+  text-align: right;
+}
+
+.step-list li {
+  border-bottom: dotted 1px rgb(115, 109, 109);
+  padding: 6px 0;
+  margin-left: 18px;
+}
+
+#section {
+  display: flex;
+}
+
+/*---------------
+SP
+-----------------*/
+@media screen and (max-width: 834px) {
+  /*  image  縦並び*/
+  .flex {
+    flex-direction: column;
+  }
+  .flex li {
+    width: 100%;
+  }
+  #section {
+    flex-direction: column;
+  }
+  #section .img {
+    width: 100%;
+  }
+  #section .img img {
+    height: auto;
+  }
+  #section .recipe {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

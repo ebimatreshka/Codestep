@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+$main-color: #2B2A27; /* 文字カラー */
+$line-color: rgb(115, 109, 109); /*　線の色　*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+    html {
+    font-size: 100%;
+}
+body {
+    color: $main-color;
+    font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Meiryo", sans-serif;
+}   
+img {
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+}
+a {
+    color: $main-color;
+}
+
+/* mainvisual */
+/*widthだけでなく高さを100vhにすると全画面表示になる
+ブラウザの高さが1000pxなら「1vh」で1%の10pxになり、
+「100vh」で100％＝ブラウザの高さになる
+結果それではやらなかった*/
+#mainvisual img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    margin-bottom: 80px;
+}
+
+/* text */
+.text {
+    text-align: center;
+    margin-bottom: 80px;
+        .site-title {
+            margin-bottom: 20px;
+        }
+}
+
+/* image */
+/* calc(100%/3)でwidthの値が３等分 */
+.flex {
+    display: flex;
+    margin-bottom: 70px;
+    li {
+        width: calc(100%/3);
+        img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+    }
+}
+
+/* buttom */
+/* display: inline-block;でaに幅と高さを持たせる */
+.btn {
+    display: block;
+    width: 150px;
+    margin: 0 auto 80px auto;
+    padding: 18px 60px;
+    border: solid 1.4px $main-color;  
+    text-decoration: none; 
+}
+
+
+/* footer */
+#footer {
+    font-size: 1rem;
+    padding: 20px;
+    text-align: center;
+    .sns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+        li {
+            padding: 10px;
+        }
+}
+
+/*　レシピページ　*/
+/*　display: flex;で画像とレシピを横並び*/
+#section {
+    display: flex;
+    margin-bottom: 60px;
+    .img {
+        width: 50%;
+    }
+        img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            vertical-align: bottom;
+        }
+}
+#section .recipe {
+    width: 50%;
+    padding: 40px 5% 0 5%;
+    .recipe-title {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+    }
+}
+.recipe .content-title {
+    border-bottom: solid 1px $line-color;
+    font-size: 1.25rem;
+    padding-bottom: 5px;
+    margin: 40px 0;
+}
+.ingredients-list {
+    display: flex;
+    flex-wrap: wrap;
+    dt {
+        width: 85%;
+        border-bottom: dotted 1px $line-color;
+        padding: 6px 0;
+    }    
+}
+.ingredients-list dd {
+    width: 15%;
+    border-bottom: dotted 1px $line-color;
+    padding: 6px 0;
+    text-align: right;
+}
+.step-list li {
+    border-bottom: dotted 1px $line-color;
+    padding: 6px 0;
+    margin-left: 18px;
+}
+#section{
+    display: flex;
+}
+
+/*---------------
+SP
+-----------------*/
+
+@media screen and (max-width: 834px) {
+    /*  image  縦並び*/
+    .flex {
+        flex-direction: column;
+        li {
+            width: 100%;
+        }
+    }
+    #section {
+        flex-direction: column;
+        .img {
+            width: 100%;
+            img {
+                height: auto;
+            }
+        }
+        .recipe {
+            width: 100%;
+        }
+    }
+}
